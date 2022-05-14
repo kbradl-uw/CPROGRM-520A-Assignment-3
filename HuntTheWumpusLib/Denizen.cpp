@@ -3,6 +3,7 @@
 #include <bit>
 #include <functional>
 #include <iostream>
+#include <limits>
 
 namespace HuntTheWumpus
 {
@@ -59,7 +60,7 @@ namespace HuntTheWumpus
     uint32_t distribute(const uint32_t n)
     {
         constexpr uint32_t p = 0x55555555ul; // pattern of alternating 0 and 1
-        constexpr uint32_t c = 3423571495ul; // random uneven integer constant; 
+        constexpr uint32_t c = 3423571495ul; // random uneven integer constant;
         return static_cast<uint32_t>(c * xorshift(p * xorshift(n, 16), 16));
     }
 
