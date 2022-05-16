@@ -12,5 +12,5 @@ libCppUnitLite.a: $(OBJ)
 all: libCppUnitLite.a
 
 clean:
-	rm *.a
-	rm *.o
+	rm -f *.a
+	rm -f *.o

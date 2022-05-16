@@ -28,7 +28,7 @@ $(1)/%.o: %.cpp
 endef
 
 UnitTestHuntTheWumpus: $(OBJ) directories HuntTheWumpusLib CppUnitLite
-	g++ -L../HuntTheWumpusLib -L../CppUnitLite $(OBJ) -o ../bin/UnitTestHuntTheWumpus -lHuntTheWumpus -lCppUnitLite $(OPTFLAGS)
+	$(CC) -L../HuntTheWumpusLib -L../CppUnitLite $(OBJ) -o ../bin/UnitTestHuntTheWumpus -lHuntTheWumpus -lCppUnitLite $(OPTFLAGS)
 
 HuntTheWumpusLib:
 	$(MAKE) -j -C ../HuntTheWumpusLib all
