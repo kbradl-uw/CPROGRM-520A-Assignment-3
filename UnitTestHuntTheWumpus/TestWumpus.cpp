@@ -25,7 +25,7 @@ namespace TestHuntTheWumpus
         CHECK(properties.m_fatalToHunter);
         CHECK(!properties.m_fatalToWumpus);
 
-        CHECK_EQUAL(20, wumpus.GetPriority());
+        CHECK_EQUAL(4, wumpus.GetPriority());
 
         const auto& id = wumpus.GetIdentifier();
 

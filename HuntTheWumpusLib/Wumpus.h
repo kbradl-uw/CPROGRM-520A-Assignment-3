@@ -10,7 +10,7 @@ namespace HuntTheWumpus
         explicit Wumpus(int instance, Context& providers);
         ~Wumpus() override = default;
 
-        int GetPriority() const override { return 20; }
+        int GetPriority() const override { return 4; }
 
         bool ObserveCaveEntrance(const std::shared_ptr<Denizen>& trigger) override;
 

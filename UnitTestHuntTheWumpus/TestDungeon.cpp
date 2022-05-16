@@ -4,6 +4,10 @@
 
 #include "Cave.h"
 
+#include "Bat.h"
+#include "Pit.h"
+#include "Wumpus.h"
+
 #include "TestHelperTestEnvironment.h"
 
 namespace TestHuntTheWumpus
@@ -41,4 +45,15 @@ namespace TestHuntTheWumpus
             CHECK(cave->HasDenizen(test.m_expectedIdentifier));
         }
     }
-}
+
+    TEST(DungeonSuite, TestDenizenPriorities)
+    {
+        TestEnvironment env;
+
+        HuntTheWumpus::Bat  bat(0, env.m_context);
+        HuntTheWumpus::Pit  pit(0, env.m_context);
+        HuntTheWumpus::Wumpus wumpus(0, env.m_context);
+
+        CHECK( bat.GetPriority() > pit.GetPriority() );
+        CHECK( pit.GetPriority() > wumpus.GetPriority() );
+    }}
